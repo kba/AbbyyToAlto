@@ -62,7 +62,8 @@ class AbbyyToAlto
      */
     public function convert($input) 
     {
-        $inputFilename = dirname(__FILE__) . DIRECTORY_SEPARATOR . $input; 
+        //$inputFilename = dirname(__FILE__) . DIRECTORY_SEPARATOR . $input; 
+        $inputFilename = $input; 
          
         $this->_abbyyDom->load($inputFilename);
         $this->_abbyyFilename = $inputFilename;
@@ -384,7 +385,8 @@ class AbbyyToAlto
      */
     public function toFile($filename) 
     {
-        $this->_altoFilename = dirname(__FILE__) . DIRECTORY_SEPARATOR . $filename;
+        // $this->_altoFilename = dirname(__FILE__) . DIRECTORY_SEPARATOR . $filename;
+        $this->_altoFilename = $filename;
         return file_put_contents($this->_altoFilename,$this->_altoDom->saveXml());
     }
 }

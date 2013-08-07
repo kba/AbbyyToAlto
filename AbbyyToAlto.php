@@ -359,7 +359,8 @@ class AbbyyToAlto
     protected function _addPage($id, $height, $width, $physicalImageNr) 
     {    
         $page = $this->_altoDom->createElementNS(self::ALTO_NS, 'Page');
-        $this->_altoDom->documentElement->appendChild($page);
+        $layout = $this->_altoDom->getElementsByTagName('Layout');
+        $layout->item(0)->appendChild($page);
         $page->setAttributeNS(self::ALTO_NS, 'alto:ID', $id);
         $page->setAttributeNS(self::ALTO_NS, 'alto:HEIGHT', $height);
         $page->setAttributeNS(self::ALTO_NS, 'alto:WIDTH', $width);

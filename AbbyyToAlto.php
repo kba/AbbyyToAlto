@@ -336,7 +336,7 @@ class AbbyyToAlto
         }
         $settings = "OCR Average Character Confidence {$confidence}%";
         $processingStepSettings = $this->_altoDom->createElementNS(self::ALTO_NS, 'processingStepSettings', $settings);
-        $ocrProcessingStep->item(0)->appendChild($procgit ssingStepSettings);
+        $ocrProcessingStep->item(0)->appendChild($processingStepSettings);
     }
 
     /**

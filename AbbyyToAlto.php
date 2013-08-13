@@ -249,6 +249,7 @@ class AbbyyToAlto
                 $this->_characterCount++;
                 $this->_confidenceTotal += $abbyyCharParams->item($c)->getAttribute('charConfidence');
             }
+            // TODO: if nodeValue is a space add a SP element
             if (!($abbyyCharParams->item($c+1) instanceof DOMElement) || $abbyyCharParams->item($c+1)->nodeValue == ' ') {
                 //if ($abbyyCharParams->item($c+1)->nodeValue == ' ') {
                     $this->_stringCount++;

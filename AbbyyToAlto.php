@@ -393,5 +393,9 @@ class AbbyyToAlto
 }
 
 $abbyyToAlto = new AbbyyToAlto;
+if ($argc < 3 || !isset($argv[1]) || !isset($argv[2])) {
+  echo("Usage: php $argv[0] <infile> <outfile>");
+  exit(1);
+}
 $abbyyToAlto->convert($argv[1]);
 $abbyyToAlto->toFile($argv[2]);
